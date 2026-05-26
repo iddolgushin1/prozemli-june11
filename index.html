@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Земля в кризис 2026 — Прямой эфир с Борисом Филимоновым</title>
+    <meta name="description" content="Бесплатный прямой эфир 11 июня. Как стать земельным специалистом и начать зарабатывать в 2026 году. Только 300 мест.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== RESET ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===== BASE ===== */
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ===== HERO WRAPPER ===== */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            overflow: hidden;
+            /* Sky → field gradient, matching reference */
+            background:
+                linear-gradient(180deg,
+                    #aecfe8 0%,
+                    #c8e0f0 18%,
+                    #d8ecf0 35%,
+                    #ddeedd 52%,
+                    #b8cc88 70%,
+                    #7a9940 85%,
+                    #5a7a28 100%
+                );
+        }
+
+        /* Soft cloud textures */
+        .clouds {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 280px 100px at 8%  18%, rgba(255,255,255,0.55) 0%, transparent 100%),
+                radial-gradient(ellipse 220px  80px at 35% 10%, rgba(255,255,255,0.45) 0%, transparent 100%),
+                radial-gradient(ellipse 180px  70px at 72% 22%, rgba(255,255,255,0.40) 0%, transparent 100%),
+                radial-gradient(ellipse 150px  55px at 90% 12%, rgba(255,255,255,0.35) 0%, transparent 100%);
+        }
+
+        /* Leaf / grain decorative dots */
+        .leaves {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image:
+                radial-gradient(circle 4px at 5%  8%,  rgba(100,160,60,0.5) 100%, transparent 100%),
+                radial-gradient(circle 3px at 12% 4%,  rgba(100,160,60,0.4) 100%, transparent 100%),
+                radial-gradient(circle 5px at 95% 6%,  rgba(100,160,60,0.45) 100%, transparent 100%),
+                radial-gradient(circle 3px at 88% 12%, rgba(100,160,60,0.3) 100%, transparent 100%);
+        }
+
+        /* ===== INNER LAYOUT ===== */
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 44px 64px 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+
+        /* ===== LEFT CONTENT ===== */
+        .hero-left {
+            flex: 0 0 auto;
+            max-width: 580px;
+            padding-bottom: 52px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 19px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+        }
+        .logo .pro  { color: #2b7a2b; }
+        .logo .rest { color: #1a1a1a; }
+
+        /* Live badge */
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: rgba(255,255,255,0.92);
+            border: 2px solid #2E7D32;
+            border-radius: 40px;
+            padding: 8px 20px;
+            margin-bottom: 22px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #2E7D32;
+            letter-spacing: 0.3px;
+            width: fit-content;
+        }
+        .live-dot {
+            width: 9px;
+            height: 9px;
+            background: #C8102E;
+            border-radius: 50%;
+            flex-shrink: 0;
+            animation: blink 1.4s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.15; }
+        }
+
+        /* Main headline */
+        h1 {
+            font-size: 44px;
+            font-weight: 900;
+            line-height: 1.18;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+        }
+        h1 .red   { color: #C8102E; }
+        h1 .green { color: #2E7D32; }
+
+        /* Subheadline */
+        .sub {
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 22px;
+            line-height: 1.6;
+        }
+
+        /* Cards section */
+        .cards-label {
+            font-size: 14px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 13px;
+            letter-spacing: 0.2px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.88);
+            border: 1.5px dashed #8aaa50;
+            border-radius: 14px;
+            padding: 13px 15px;
+            font-size: 13px;
+            color: #222;
+            line-height: 1.45;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-icon {
+            font-size: 18px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .card strong { color: #111; font-weight: 800; }
+
+        /* CTA button */
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #d01030 0%, #960c22 100%);
+            color: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            width: fit-content;
+            box-shadow: 0 6px 28px rgba(200, 16, 46, 0.42);
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 38px rgba(200, 16, 46, 0.55);
+        }
+
+        .btn-arrow {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .deadline {
+            font-size: 13px;
+            color: #444;
+            font-weight: 500;
+            line-height: 1.55;
+        }
+        .deadline strong { color: #C8102E; font-weight: 700; }
+
+        /* ===== RIGHT — PHOTO ===== */
+        .hero-right {
+            flex: 0 0 auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 40px;
+        }
+
+        /* Gold circular badge */
+        .gold-badge {
+            position: absolute;
+            left: -72px;
+            top: 30px;
+            z-index: 5;
+            width: 132px;
+            height: 132px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #e0b020 0%, #c49010 50%, #a87010 100%);
+            border: 4px solid #f2cc50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.2);
+            padding: 8px;
+        }
+        .gb-icon  { font-size: 22px; line-height: 1; margin-bottom: 3px; }
+        .gb-big   { font-size: 26px; font-weight: 900; line-height: 1; }
+        .gb-sub   { font-size: 11px; font-weight: 700; line-height: 1.5; text-transform: uppercase; }
+        .gb-free  { font-size: 11px; font-weight: 700; color: #ffe570; margin-top: 2px; }
+
+        /* Boris photo */
+        .boris-img {
+            display: block;
+            width: 430px;
+            height: 570px;
+            object-fit: cover;
+            object-position: center 8%;
+            border-radius: 22px 22px 0 0;
+        }
+
+        /* Gold name plate */
+        .name-plate {
+            width: 100%;
+            background: linear-gradient(135deg, #d4a822 0%, #9a7010 50%, #7a5508 100%);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 14px 20px;
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) {
+            .hero-inner { padding: 36px 36px 0; }
+            h1 { font-size: 36px; }
+            .boris-img { width: 360px; height: 480px; }
+            .gold-badge { left: -58px; width: 114px; height: 114px; }
+        }
+
+        @media (max-width: 860px) {
+            .hero-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 28px 20px 0;
+                min-height: unset;
+            }
+            .hero-left {
+                max-width: 100%;
+                padding-bottom: 28px;
+            }
+            h1 { font-size: 28px; }
+            .hero-right {
+                margin-left: 0;
+                width: 100%;
+            }
+            .boris-img {
+                width: 100%;
+                height: 300px;
+                border-radius: 18px 18px 0 0;
+            }
+            .gold-badge {
+                left: auto;
+                right: 12px;
+                top: -32px;
+                width: 100px;
+                height: 100px;
+            }
+            .gb-big  { font-size: 20px; }
+            .cards { grid-template-columns: 1fr; }
+            .btn { width: 100%; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="clouds"></div>
+    <div class="leaves"></div>
+
+    <div class="hero-inner">
+
+        <!-- ===== LEFT CONTENT ===== -->
+        <div class="hero-left">
+
+            <div class="logo">
+                <span class="pro">PRO</span><span class="rest">ЗЕМЛИ</span>
+            </div>
+
+            <div class="live-badge">
+                <span class="live-dot"></span>
+                Прямой эфир · 11 июня · Бесплатно
+            </div>
+
+            <h1>
+                По какой причине земельный<br>
+                специалист — это <span class="red">самая устойчивая<br>
+                профессия</span> в кризис <span class="green">2026</span>?
+            </h1>
+
+            <p class="sub">
+                Дарю разбор: как найти первых клиентов в земле<br>
+                и сколько уходит от старта до первых денег —<br>
+                <strong>из первых уст действующих специалистов.</strong>
+            </p>
+
+            <p class="cards-label">На эфире узнаешь:</p>
+
+            <div class="cards">
+                <div class="card">
+                    <span class="card-icon">🌾</span>
+                    Реальная ситуация в земельной сфере<br>
+                    <strong>на середину 2026 года</strong>
+                </div>
+                <div class="card">
+                    <span class="card-icon">💼</span>
+                    Как земельные специалисты<br>
+                    <strong>находят клиентов</strong> прямо сейчас
+                </div>
+                <div class="card">
+                    <span class="card-icon">🤝</span>
+                    Как выглядит<br>
+                    <strong>первая сделка</strong> изнутри
+                </div>
+                <div class="card">
+                    <span class="card-icon">⏱️</span>
+                    Сколько времени реально<br>
+                    <strong>от старта до первых денег</strong>
+                </div>
+            </div>
+
+            <div class="cta-group">
+                <a href="ВСТАВЬ_ССЫЛКУ_НА_РЕГИСТРАЦИЮ" class="btn">
+                    <span class="btn-arrow">↓</span>
+                    ЗАНЯТЬ МЕСТО НА ЭФИРЕ
+                </a>
+                <p class="deadline">
+                    <strong>Регистрация закрывается 10 июня.</strong><br>
+                    Лимит — 300 человек. Без регистрации — без записи эфира.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- ===== RIGHT — BORIS PHOTO ===== -->
+        <div class="hero-right">
+
+            <!-- Gold circular badge -->
+            <div class="gold-badge">
+                <span class="gb-icon">📅</span>
+                <span class="gb-big">11</span>
+                <span class="gb-sub">ИЮНЯ<br>300 МЕСТ</span>
+                <span class="gb-free">БЕСПЛАТНО</span>
+            </div>
+
+            <!--
+                ИНСТРУКЦИЯ ПО ФОТО:
+                1. Загрузи фото Бориса в Тильде: Настройки → Файлы
+                2. Скопируй URL загруженного файла
+                3. Вставь URL вместо "ВСТАВЬ_URL_ФОТО_БОРИСА" ниже
+            -->
+            <img
+                src="ВСТАВЬ_URL_ФОТО_БОРИСА"
+                alt="Борис Филимонов — земельный специалист"
+                class="boris-img"
+            >
+
+            <div class="name-plate">БОРИС ФИЛИМОНОВ</div>
+
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
