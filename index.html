@@ -267,11 +267,10 @@
         /* Boris photo */
         .boris-img {
             display: block;
-            width: 430px;
-            height: 570px;
-            object-fit: cover;
-            object-position: center 8%;
-            border-radius: 22px 22px 0 0;
+            width: 460px;
+            height: 580px;
+            object-fit: contain;
+            object-position: bottom center;
         }
 
         /* Gold name plate */
@@ -285,8 +284,9 @@
             text-transform: uppercase;
             text-align: center;
             padding: 14px 20px;
-            border-radius: 0 0 16px 16px;
+            border-radius: 8px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+            margin-top: -8px;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -419,7 +419,7 @@
                 3. Вставь URL вместо "ВСТАВЬ_URL_ФОТО_БОРИСА" ниже
             -->
             <img
-                src="boris.jpg"
+                src="boris-cutout.png"
                 alt="Борис Филимонов — земельный специалист"
                 class="boris-img"
             >
