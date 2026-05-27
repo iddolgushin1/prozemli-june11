@@ -72,7 +72,7 @@
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 44px 580px 0 64px;
+            padding: 44px 64px 52px;
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
@@ -82,8 +82,7 @@
         /* ===== LEFT CONTENT ===== */
         .hero-left {
             flex: 0 0 auto;
-            max-width: 580px;
-            padding-bottom: 52px;
+            max-width: 560px;
             display: flex;
             flex-direction: column;
             gap: 0;
@@ -233,19 +232,22 @@
         .hero-right {
             position: absolute;
             right: 0;
+            top: 0;
             bottom: 0;
             z-index: 3;
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 520px;
+            justify-content: flex-end;
+            width: 45%;
         }
 
         /* Gold circular badge */
         .gold-badge {
             position: absolute;
-            left: -60px;
-            top: 80px;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
             z-index: 5;
             width: 140px;
             height: 140px;
@@ -269,16 +271,18 @@
         /* Boris photo */
         .boris-img {
             display: block;
-            width: 520px;
-            height: auto;
-            min-height: 600px;
+            width: auto;
+            height: 92vh;
+            max-width: 100%;
             object-fit: contain;
             object-position: bottom center;
         }
 
         /* Gold name plate */
         .name-plate {
-            width: 80%;
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
             background: linear-gradient(135deg, #d4a822 0%, #9a7010 50%, #7a5508 100%);
             color: #fff;
             font-size: 13px;
@@ -286,19 +290,16 @@
             letter-spacing: 3.5px;
             text-transform: uppercase;
             text-align: center;
-            padding: 14px 20px;
-            border-radius: 8px;
+            padding: 12px 28px;
+            border-radius: 6px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-            margin-bottom: 24px;
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1100px) {
-            .hero-inner { padding: 36px 36px 0; }
+            .hero-inner { padding: 36px 36px 44px; }
             h1 { font-size: 36px; }
-            .hero-right { width: 420px; }
-            .boris-img { width: 420px; }
-            .gold-badge { left: -50px; width: 120px; height: 120px; }
+            .gold-badge { width: 115px; height: 115px; left: -5px; }
         }
 
         @media (max-width: 860px) {
@@ -307,29 +308,17 @@
                 padding: 28px 20px 0;
                 min-height: unset;
             }
-            .hero-left {
-                max-width: 100%;
-                padding-bottom: 20px;
-            }
+            .hero-left { max-width: 100%; }
             h1 { font-size: 28px; }
             .hero-right {
                 position: relative;
-                right: auto;
-                bottom: auto;
+                top: auto; right: auto; bottom: auto;
                 width: 100%;
-                margin-top: 20px;
+                margin-top: 24px;
             }
-            .boris-img {
-                width: 100%;
-                min-height: unset;
-            }
-            .gold-badge {
-                left: auto;
-                right: 12px;
-                top: -32px;
-                width: 100px;
-                height: 100px;
-            }
+            .boris-img { height: auto; width: 85%; margin: 0 auto; display: block; }
+            .name-plate { position: relative; bottom: auto; right: auto; margin: 0 auto 0; width: fit-content; }
+            .gold-badge { left: auto; right: 10px; top: 10px; transform: none; width: 100px; height: 100px; }
             .gb-big  { font-size: 20px; }
             .cards { grid-template-columns: 1fr; }
             .btn { width: 100%; max-width: 100%; }
